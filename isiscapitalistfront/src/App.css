@@ -1,38 +1,63 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  display: grid;
+  grid-template-columns: 25% 25% 30% 20%;
+  padding: 10px;
+  text-align: center;
+  background: white;
+  border-radius: 4px;
+  border-color: coral;
+  color: black;
+  font-size: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.multiplicateur {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 25px;
+  padding: 10px;
+  width: 70px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.multiplicateur span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.multiplicateur span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.multiplicateur:hover span {
+  padding-right: 25px;
+}
+
+.multiplicateur:hover span:after {
+  opacity: 1;
+  right: 0;
 }
